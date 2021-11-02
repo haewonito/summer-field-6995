@@ -7,3 +7,11 @@
  <% end %>
 
  <h2>Average Age of all the actors: </h2><%= @movie.actors.average(:age).round(1) %>
+
+
+ <%= form_with url:"/movies/#{@movie.id}", method: :get, local: true do |f| %>
+ <h4><%= f.label :title, "Fill in the name of the actor you want to add to the movie and click 'Submit'" %></h4>
+ <%= f.label :actor_name, 'Actor Name:' %><br>
+ <%= f.text_field :actor_name %><br>
+ <%= f.submit 'Submit' %>
+ <% end %>

@@ -21,7 +21,6 @@ RSpec.describe "index", type: :feature do
   end
 
   it "story 1 - shows titles of movies underneath each studio" do
-save_and_open_page
     expect(page).to have_content("Raiders of the Lost Ark")
     expect(page).to have_content("Shrek")
   end
