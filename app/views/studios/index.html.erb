@@ -1,5 +1,12 @@
 <h1>Studios:</h1>
 
 <% @studios.each do |studio| %>
-  <p><%= studio.name %>: Located in <%=studio.location %></p>
+  <p>
+  <%= studio.name %>: Located in <%=studio.location %><br>
+
+  <% studio.movies.each do |movie| %>
+    <%= movie.title %><br>
+  <% end %>
+  </p>
+
 <% end %>
