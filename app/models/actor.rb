@@ -4,4 +4,8 @@ class Actor < ApplicationRecord
 
   validates :name, presence: true
   validates :age, presence: true
+
+  def self.order_by_age
+    order(:age)
+  end
 end

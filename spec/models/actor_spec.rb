@@ -13,8 +13,13 @@ RSpec.describe Actor, type: :model do
   end
 
   describe "class methods" do
-    xit "" do
+    it "#order_by_age" do
 
+      @harrison = Actor.create!(name: "Harrison Ford", age: 79)
+      @julia = Actor.create!(name: "Julia Roberts", age: 54)
+      @emma = Actor.create!(name: "Emma Thompson", age: 62)
+
+      expect(Actor.order_by_age).to eq([@julia, @emma, @harrison])
     end
   end
 end
